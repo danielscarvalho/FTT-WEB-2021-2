@@ -10,8 +10,9 @@ TODO:
 - Projeto Individual (próxima semana)
 - Vai compor a nota para N1 1B
 - Gerar gráfico com ChartJS - https://www.chartjs.org/
+- Projeto Vanilla (não usar frameworks)
 
-Referências:
+Referências (HTML, CSS, JavaScript):
 
 - https://www.chartjs.org/
 - https://books.goalkicker.com/
