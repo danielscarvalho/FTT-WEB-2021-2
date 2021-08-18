@@ -4,7 +4,7 @@ Projeto WEB front-end, consumir WEB API publica
 TODO:
 
 - Criar uma página WEB
-- Carregar dados de uma WEB API REST/JSON disponível na Internet (púplica)
+- Carregar dados de uma WEB API REST/JSON disponível na Internet (púplica): https://github.com/public-apis/public-apis
 - Criar TAGs na página WEB para exibir os dados da API
 - Publicar página na Internet no GitHub Pages
 - Projeto Individual (próxima semana)
