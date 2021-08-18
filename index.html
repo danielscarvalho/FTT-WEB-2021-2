@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTT - EC - LP3 - 2021 - 2</title>
+</head>
+<script>
+
+function callApi() {
+    let URL = "https://www.mercadobitcoin.net/api/BTC/ticker/"
+
+    fetch(URL)
+        .then(req => req.json())
+        .then(show => { console.log(show); fillTable(show);})
+
+}
+
+function fillTable(tableData) {
+
+    const tbodyTag = document.getElementById("tableData");
+
+    for(var item in tableData.ticker) {
+
+        let trTag = document.createElement("tr");
+        let tdTagChave = document.createElement("td");
+        let tdTagValor = document.createElement("td");
+
+        tdTagChave.innerHTML = item;
+        trTag.appendChild(tdTagChave);
+
+        tdTagValor.innerHTML = tableData.ticker[item];
+        trTag.appendChild(tdTagValor);
+
+        tbodyTag.appendChild(trTag);
+    }
+}
+
+</script>
+<body>
+<!--
+    - Criar uma página WEB
+    - Carregar dados de uma WEB API REST/JSON disponível na Internet (púplica)
+    - Criar TAGs na página WEB para exibir os dados da API
+    - Publicar página na Internet no GitHub Pages
+    - Projeto Individual (próxima semana)
+    - Vai compor a nota para N1 1B
+    - Gerar gráfico com ChartJS - https://www.chartjs.org/
+-->    
+<h1>Bitcoin info:</h1>
+<p><button onclick="callApi();">Call API</button></p>
+<p>
+    <table>
+        <thead>
+            <tr><th>Chave</th><th>Valor</th></tr>
+        </thead>
+        <tbody id="tableData">
+        </tbody>
+    </table>
+</p>
+</body>
+</html>
