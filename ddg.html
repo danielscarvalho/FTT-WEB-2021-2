@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDQ - Query</title>
+</head>
+<style>
+        body {font-family: Verdana, sans-serif;}
+</style>
+<script>
+    function getDDGQuery() {
+        let URL="https://api.duckduckgo.com/?format=json&q=";
+        
+        let queryTag = document.getElementById("queryTag");
+
+        fetch(URL + queryTag.value,
+            {
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache'
+            }
+        )
+          .then(req => req.json())
+          .then(show => { console.log(show); showResult(show);}); 
+    } //getDDGQuery
+
+    function showResult(ddgData) {
+
+        let resultTag = document.getElementById("resultTag");
+
+        let tagP = document.createElement("p");
+
+        tagP.innerHTML = ddgData["Abstract"];
+        
+        resultTag.appendChild(tagP);
+
+    }
+</script>
+<body>
+    <h1>DuckDuckGo Query...</h1>
+    <input id="queryTag" type="search" placeholder="Busca no DuckDuckGo"> <button onclick="getDDGQuery();">Go!</button>
+    <div id="resultTag">
+        
+    </div>
+</body>
+</html>

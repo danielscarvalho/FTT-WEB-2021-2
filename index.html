@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FTT - EC - LP3 - 2021 - 2</title>
+    <style>
+        body {font-family: Verdana, sans-serif;}
+    </style>
 </head>
 <script>
 
 function callApi() {
-    let URL = "https://www.mercadobitcoin.net/api/BTC/ticker/"
+    let URL = "https://www.mercadobitcoin.net/api/BTC/ticker/";
 
     fetch(URL)
         .then(req => req.json())
@@ -20,6 +23,7 @@ function callApi() {
 function fillTable(tableData) {
 
     const tbodyTag = document.getElementById("tableData");
+    tbodyTag.innerHTML="";
 
     for(var item in tableData.ticker) {
 
@@ -47,6 +51,10 @@ function fillTable(tableData) {
     - Projeto Individual (próxima semana)
     - Vai compor a nota para N1 1B
     - Gerar gráfico com ChartJS - https://www.chartjs.org/
+
+    - Consumir DuckDuckGo
+    - Consumir GitHub Jobs
+
 -->    
 <h1>Bitcoin info:</h1>
 <p><button onclick="callApi();">Call API</button></p>
@@ -58,6 +66,9 @@ function fillTable(tableData) {
         <tbody id="tableData">
         </tbody>
     </table>
+</p>
+<p>
+    <a href="ddg.html">DuckDuckGo Query</a>
 </p>
 </body>
 </html>

@@ -1,7 +1,9 @@
 # FTT-WEB-2021-2
 Projeto WEB front-end, consumir WEB API publica
 
-TODO:
+## FTT - EC - LP3:
+
+### TODO:
 
 - Criar uma página WEB
 - Carregar dados de uma WEB API REST/JSON disponível na Internet (púplica): https://github.com/public-apis/public-apis
